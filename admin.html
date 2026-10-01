@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Belt Study — Content Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .admin-shell{max-width:1280px;margin:0 auto;padding:30px}
+    .admin-header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px}
+    .admin-header p{margin:5px 0 0;color:var(--muted);font-size:13px}
+    .admin-grid{display:grid;grid-template-columns:320px 1fr;gap:16px}
+    .admin-panel{padding:18px;border:1px solid var(--line);border-radius:16px;background:#0f131a}
+    .admin-list{display:grid;gap:6px;margin-top:12px}
+    .admin-list button{width:100%;text-align:left;padding:11px;border:1px solid transparent;background:transparent;color:var(--muted);border-radius:10px}
+    .admin-list button:hover,.admin-list button.active{background:#181d27;color:#fff;border-color:#2b3240}
+    .admin-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+    .admin-row:last-child{border-bottom:0}
+    .admin-row p{margin:4px 0 0;color:var(--muted);font-size:12px}
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+    .tiny{font-size:11px;color:var(--muted)}
+    @media(max-width:900px){.admin-shell{padding:18px}.admin-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <main class="admin-shell">
+    <header class="admin-header">
+      <div><div class="eyebrow">Private area</div><h1 style="font-size:36px;margin-top:8px">Official content manager</h1><p>Only admin users can change the official syllabus.</p></div>
+      <div class="toolbar"><a class="ghost-btn" href="index.html">← Back to study site</a><button class="ghost-btn" id="authButton">Sign in</button></div>
+    </header>
+
+    <section id="adminRoot"></section>
+  </main>
+  <div class="modal-backdrop hidden" id="adminModalBackdrop"><div class="modal" id="adminModal"></div></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
