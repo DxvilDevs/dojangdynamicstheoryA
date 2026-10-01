@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0c0d18" />
+  <meta name="description" content="Dojang Dynamics - Black Belt study, flashcards and progress." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <title>Dojang Dynamics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <div class="ambient ambient-c"></div>
+
+  <div id="appShell" class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="Dojang Dynamics home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand-copy"><strong>Dojang</strong><em>Dynamics</em></span>
+      </a>
+
+      <div class="nav-label">Study</div>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">⌂</span><span>Overview</span></button>
+        <button class="nav-item" data-view="study"><span class="nav-icon">✦</span><span>Study</span></button>
+        <button class="nav-item" data-view="official"><span class="nav-icon">▦</span><span>Official decks</span></button>
+        <button class="nav-item" data-view="my-decks"><span class="nav-icon">＋</span><span>My stuff</span></button>
+        <button class="nav-item" data-view="progress"><span class="nav-icon">◔</span><span>Progress</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="progress-card">
+          <div class="progress-card-top">
+            <span>Black belt progress</span>
+            <strong id="sidebarProgress">0%</strong>
+          </div>
+          <div class="progress-track"><div class="progress-fill" id="sidebarProgressFill"></div></div>
+          <small id="sidebarProgressText">Start your first review</small>
+        </div>
+        <button class="install-card" id="installButton" hidden>
+          <span class="install-icon">⌄</span>
+          <span><strong>Install app</strong><small>Keep Dojang Dynamics on your device</small></span>
+        </button>
+        <a class="admin-link" href="admin.html">Content manager</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="mobile-brand">
+          <span class="brand-mark small" aria-hidden="true"><span></span><span></span><span></span></span>
+          <strong>Dojang Dynamics</strong>
+        </div>
+        <div class="crumbs" id="crumbs">Overview</div>
+        <div class="topbar-actions">
+          <button class="top-action" id="authButton">My account</button>
+          <button class="avatar-button" id="avatarButton" aria-label="Account">DD</button>
+        </div>
+      </header>
+
+      <div id="content" class="content"></div>
+    </main>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <button data-view="dashboard" class="active"><span>⌂</span><small>Home</small></button>
+      <button data-view="study"><span>✦</span><small>Study</small></button>
+      <button data-view="official"><span>▦</span><small>Decks</small></button>
+      <button data-view="my-decks"><span>＋</span><small>My stuff</small></button>
+      <button data-view="progress"><span>◔</span><small>Progress</small></button>
+    </nav>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" id="modal" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

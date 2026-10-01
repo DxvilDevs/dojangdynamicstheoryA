@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0c0d18" />
+  <title>Dojang Dynamics · Content Manager</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-page">
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div><div class="ambient ambient-c"></div>
+  <main class="admin-shell">
+    <header class="admin-header">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span class="brand-copy"><strong>Dojang</strong><em>Dynamics</em></span></a>
+      <div class="admin-header-copy"><div class="eyebrow">Private area</div><h1>Official content manager</h1><p>Build and organise the syllabus that everyone studies from.</p></div>
+      <div class="toolbar"><a class="ghost-btn" href="index.html">← Study site</a><button class="ghost-btn" id="authButton">Sign in</button></div>
+    </header>
+    <section class="admin-intro"><div><span class="admin-dot"></span><strong>Official content is protected</strong><span>Only accounts added to <code>admin_users</code> can change decks, categories and cards.</span></div></section>
+    <section id="adminRoot"></section>
+  </main>
+  <div class="modal-backdrop hidden" id="adminModalBackdrop"><div class="modal" id="adminModal"></div></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
